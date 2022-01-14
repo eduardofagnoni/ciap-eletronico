@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O estabelecimento que se credita o ICMS sobre o ATIVO IMOBILIZADO, com emissão de nota fiscal e ou lançamento no Registro de Apuração é obrigado a preencher o BLOCO G da EFD FISCAL, sob pela de ser autuado pela fiscalização.">
+    <meta name="keywords" content="BLOCO G, bloco g, ciap, ciap eletrônico, Ativo Imobilizado, Crédito de ICMS, COFINS, ciap com bloco g">
+
+    <link rel="icon" href="favicon.ico">
+    <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+    
+    <title>Ciap Eletrônico | Bloco G - Crédito de ICMS, PIS e COFINS do Ativo Imobilizado</title>
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">    
+    <!-- animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- css da página -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styleMenu.css">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+<body>
+
+    <main id="home">
+
+        <!--header menus-->
+        <header id="header-principal">            
+        
+            <div class="container">        
+                <div class="row">
+                    <div class="col-12">
+                        <span class="scroll"><a href="#home" class="logo-top">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 114 68">
+                                <defs>
+                                  <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 132 80">
+                                    <image xlink:href="data:image/png;base64,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"/>
+                                  </pattern>
+                                </defs>
+                                <rect id="NoPath_-_Copia" data-name="NoPath - Copia" width="114" height="68" fill="url(#pattern)"/>
+                              </svg>                              
+                        </a></span>
+                        <nav class="menu-principal">
+                            <ul>
+                                <li class="scroll"><a href="#home" class="active">Home</a></li>
+                                <li class="scroll"><a href="#ciap">Ciap Eletrônico</a></li>
+                                <li class="scroll"><a href="#servicos">Serviços</a></li>
+                                <li class="scroll"><a href="#clientes">Clientes</a></li>
+                                <li class="scroll"><a href="#contato">Contato</a></li>
+                                <li><a href="tour/1_home.html" target="_blank">Veja o Programa</a></li>
+                            </ul>
+                        </nav>
+
+                        <button class="open-menu c-hamburger c-hamburger--htx mnu-togle" title="Menu">
+                            <span>toggle menu</span>
+                        </button>                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- submenu -->
+            <div class="conteudo-menu-principal">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">                            
+                            <nav class="menu-principal-vertical">
+                                <ul>
+                                    <li class="scroll"><a href="#home" onclick="fechaMenu()" class="active">Home</a></li>
+                                    <li class="scroll"><a href="#ciap" onclick="fechaMenu()">Ciap Eletrônico</a></li>
+                                    <li class="scroll"><a href="#servicos" onclick="fechaMenu()">Serviços</a></li>
+                                    <li class="scroll"><a href="#clientes" onclick="fechaMenu()">Clientes</a></li>
+                                    <li class="scroll"><a href="#contato" onclick="fechaMenu()">Contato</a></li>
+                                    <li><a href="tour/1_home.html" target="_blank" onclick="fechaMenu()">Veja o Programa</a></li>
+                                </ul>
+                            </nav>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+            <!-- submenu //-->
+
+        </header>                        
+        <!--header menus //-->
+
+
+        <!-- banner -->
+        <section class="banner">
+            <div id="carouselExampleControls" class="carousel slide is-desk" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!-- <img class="d-block w-100" src="assets/images/banner.png"> -->
+                        <div class="cont-banner">
+                            <div class="container cont">
+                                <div>
+                                    <h1>Crédito de ICMS, PIS e COFINS <br>do Ativo Imobilizado e geração do <strong>BLOCO G</strong></h1>
+                                    <a href="tour/1_home.html" target="_blank" class="btn btn-banner">Conheça o Programa 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15.2" height="19" viewBox="0 0 15.2 19">
+                                            <path class="seta" data-name="Polígono 1" d="M9.5,0,19,15.2H0Z" transform="translate(15.2) rotate(90)" fill="#e1940b"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>                  
+                </div>
+                <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a> -->
+            </div>
+        </section>
+        <!-- banner //-->
+
+
+        <!--Ciap Eletrônico-->
+        <span id="ciap"></span>
+        <section class="sec-cinza sec-duas-colunas">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <h2 class="wow fadeInUp animate" data-wow-delay=".10s">Ciap Eletrônico</h2>                        
+                        <p class="tit wow fadeInUp animate" data-wow-delay=".20s">A Empresa</p>
+                        <p class="wow fadeInUp animate" data-wow-delay=".30s">Fundada em 1990, com atuação na informatização de controle de crédito do ICMS, PIS, COFINS e depreciação nas Aquisições do Ativo Imobilizado, elaboração do demonstrativo de Crédito Acumulado e elaboração de laudos técnicos de energia elétrica e de telefonia para fins de aproveitamento de crédito do ICMS.</p>
+                    </div>
+                    <div class="col-12 col-md-6 is-desktop wow fadeInRight animate" data-wow-delay=".20s"><img src="assets/images/deco-ciap.png" alt="Ciap Eletrônico" ></div>
+                </div>
+                <div  class="row">
+                    <div class="col-12">
+                        <p class="tit wow fadeInUp animate" data-wow-delay=".10s">Crédito de ICMS do Ativo Imobilizado</p>
+                        
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">O estabelecimento <strong>que se credita o ICMS sobre o ATIVO IMOBILIZADO</strong>, com emissão de nota fiscal e ou lançamento no Registro de Apuração </strong>é obrigado a preencher o BLOCO G da EFD FISCAL, sob pela de ser autuado pela fiscalização</strong>.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Utilizamos Software para controle do Ativo Imobilizado e geração das Fichas CIAP D com todas as informações exigidas pela fiscalização e geração do <strong>bloco G</strong> para exportar no EFD.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Há módulo Imobilizado em Andamento controlando ativo imobilizado em construção.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s"><strong>Gera registro G126 do Bloco G</strong> caso não foi possível aproveitamento do ICMS no mês referência.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Registra todas as aquisições para cada Imobilizado em Andamento e transfere para CIAP o valor total das aquisições, crédito de ICMS, PIS e COFINS.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Lança automaticamente em cada Ficha CIAP os valores que deverá ser creditado na medida que é preenchido a data referência.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Emite relatório com valores a creditar (CIAP D).</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Emite Relação de Ativo Adquirido com valor da aquisição, data de aquisição, nota fiscal de aquisição, usuário, valor do ICMS, data da saída e mês de uso.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Emite Resumo Mensal de Crédito do valor de ICMS de cada Ativo Imobilizado.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Emite Relatório de Saldo Contábil do valor a ser creditado subdividido em curto e longo prazo.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Emite <strong>Previsão de Crédito de ICMS</strong>, informação importante para planejamento Financeiro da empresa.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Emite demonstrativo de valores de aquisição e venda de Ativo Imobilizado lançado no mês a fim de conferir com a GIA do mês.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Emite Ficha de Depreciação e Relatório de Depreciação Mensal.</p>
+
+                        <p class="wow fadeInUp animate" data-wow-delay=".10s">Para estabelecimento que fez opção de apuração por Lucro Real o sistema faz o mesmo relatório acima com PIS e COFINS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Ciap Eletrônico//-->
+
+        <!--Serviços-->
+        <span id="servicos"></span>
+        <section class="sec-branca sec-duas-colunas">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 is-desktop wow fadeInLeft animate" data-wow-delay=".10s"><img src="assets/images/deco-servicos.png" alt="Recuperável"></div>
+                    <div class="col-12 col-md-6">
+                        <h2 class="wow fadeInUp animate" data-wow-delay=".10s">Serviços</h2>
+                        <ul class="servicos">
+                            <li class="wow fadeInUp animate" data-wow-delay=".20s">Recuperação e ou revisão de ICMS do Ativo Permanente e implantação de soft para CIAP D.</li>
+                            <li class="wow fadeInUp animate" data-wow-delay=".30s">Recuperação e ou revisão de PIS e COFINS do Ativo Permanente e implantação de soft para controlar futuros créditos.</li>
+                            <li class="wow fadeInUp animate" data-wow-delay=".40s">Recuperação e ou revisão de ICMS de Energia Elétrica e Elaboração de Laudo Técnico.</li>
+                            <li class="wow fadeInUp animate" data-wow-delay=".50s">Recuperação e ou revisão de ICMS de Telefone e Elaboração de Laudo Técnico.</li>
+                            <li class="wow fadeInUp animate" data-wow-delay=".60s">Recuperação e ou revisão de ICMS de Material Intermediário.</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 is-mobile wow fadeInUp animate" data-wow-delay=".70s"><img src="assets/images/deco-servicos.png" alt="Recuperável"></div>
+                </div>
+            </div>
+        </section>
+        <!--Serviços//-->
+
+        <!--Alguns dos nossos clientes-->
+        <span id="clientes"></span>
+        <section class="sec-cinza sec-duas-colunas">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="wow fadeInUp animate" data-wow-delay=".10s">Alguns dos nossos clientes</h2>
+                    </div>                    
+                </div>
+                <div class="row clientes">
+                    <div class="col-6 col-md-3 text-center wow fadeInUp animate"  data-wow-delay=".20s"><img src="assets/images/clientes/1.png" alt="Ford"></div>
+                    <div class="col-6 col-md-3 text-center wow fadeInUp animate"  data-wow-delay=".30s"><img src="assets/images/clientes/2.png" alt="Dupont"></div>
+                    <div class="col-6 col-md-3 text-center wow fadeInUp animate"  data-wow-delay=".40s"><img src="assets/images/clientes/3.png" alt="Siemens"></div>
+                    <div class="col-6 col-md-3 text-center wow fadeInUp animate"  data-wow-delay=".50s"><img src="assets/images/clientes/4.png" alt="GE"></div>
+                    <div class="col-6 col-md-3 text-center wow fadeInUp animate"  data-wow-delay=".60s"><img src="assets/images/clientes/5.png" alt="Reebok"></div>
+                    <div class="col-6 col-md-3 text-center wow fadeInUp animate"  data-wow-delay=".70s"><img src="assets/images/clientes/6.png" alt="Café do Ponto"></div>
+                </div>
+            </div>
+        </section>
+        <!--Alguns dos nossos clientes//-->
+
+        <!--Dúvidas e sugestões-->
+        <span id="contato"></span>
+        <section class="sec-branca sec-duas-colunas">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <h2 class="wow fadeInUp animate" data-wow-delay=".10s">Dúvidas os sugestões</h2>
+                        <p class="wow fadeInUp animate" data-wow-delay=".20s">Dúvidas? Sugestões? Entre em contato conosco. Estamos prontos para conversar.</p>
+                        <p class="wow fadeInUp animate" data-wow-delay=".30s">* Campos obrigatórios.</p>
+                    </div>
+                    <div class="col-12 col-md-6 s-fale-conosco" >
+                        <form id="contato-form-fale-conosco">   
+    
+                            <input type="text" name="txt-nome" id="txt-nome" placeholder="Nome*" required class="frm-campos wow fadeInUp animate" data-wow-delay=".40s">
+                            <input type="email" name="txt-email" id="txt-email" placeholder="Endereço de e-mail*" required class="frm-campos wow fadeInUp animate" data-wow-delay=".50s">
+                            <input type="tel" maxlength="11" name="txt-telefone" id="txt-telefone" placeholder="Telefone" class="frm-campos wow fadeInUp animate" data-wow-delay=".60s">
+                            <textarea name="tx-msg" id="tx-msg" placeholder="Mensagem*" required class="frm-campos wow fadeInUp animate" data-wow-delay=".70s"></textarea>   
+                            
+                            <div class="linha wow fadeInUp animate" data-wow-delay="1.00s">
+                                <input class="ck-lgpd" type="checkbox" name="ck-lgpd" id="ck-lgpd" value="sim" > <label for="ck-lgpd">*Ao clicar em “enviar” abaixo, você permite que o Ciap Eletrônico entre em contato e envie novidades sobre o sistema.</label>
+                            </div>
+
+                            <div class="linha wow fadeInUp animate" data-wow-delay="1.10s">
+                                <div class="g-recaptcha" data-sitekey="6LeK1BEeAAAAAAhAWx3z1dvamsm02ZyoFx-1j6T5"></div>
+                            </div>
+                            <div class="linha wow fadeInUp animate" data-wow-delay="1.20s">
+                                <input id="btn-enviar" type="submit" name="Enviar" value="Enviar">
+                                <div class="loading"><img src="assets/images/spinner-gif-17.gif"  width="20" alt="Tentando enviar..."></div>
+                                <div class="confirma">Mensagem enviada! Obrigado.</div>
+                            </div>                           
+                            
+                        </form>
+
+                        <div class="confirma text-center">Sua mensagem foi enviada corretamente! <br>Em breve, entraremos em contato.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Dúvidas e sugestões//-->
+
+        <!--Footer-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-2">
+                        <img src="assets/images/logo.svg" alt="Ciap Eletrônico">
+                    </div>
+                    <div class="col-12 col-md-10">
+                        <p><strong>UNIVERSO ASS EMP REP LTDA</strong><br>
+                        Rua Manuel Pinheiro, 209 – Bairro Pirituba<br>
+                        05131-110 – São Paulo – SP<br>
+                        Fone (11) 3904-0476/9 9977-6353<br>
+                        <a href="mailto:e-mail:e.m.k@uol.com.br">e-mail:e.m.k@uol.com.br</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer//-->
+    </main>
+
+
+    <!-- CSS Template --> 
+    <link rel="stylesheet" type="text/css" href="assets/css/template.css">
+    <!-- Font family --> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Required bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- wow -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js" type="text/javascript"></script>
+
+    <script src="assets/js/main.js" async defer></script>
+    <script src="assets/js/formulario.js" async defer></script>
+
+
+    <script>
+
+        new WOW().init();
+
+        /*******************************************************************
+        Menu Hamburguer
+        *******************************************************************/
+        (function() {
+    
+            "use strict";                
+
+            var toggles = document.querySelectorAll(".c-hamburger");
+
+            for (var i = toggles.length - 1; i >= 0; i--) {
+            var toggle = toggles[i];
+            toggleHandler(toggle);
+            };
+
+            function toggleHandler(toggle) {
+            toggle.addEventListener( "click", function(e) {
+                e.preventDefault();
+                (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+                (this.classList.contains("is-active") === true) ? abreMenu() : fechaMenu();        
+            });
+            }
+
+        })();
+        /*******************************************************************
+        Menu Hamburguer //
+        *******************************************************************/
+
+
+        /*******************************************************************
+        Funções abre e fecha telas de Menu
+        *******************************************************************/  
+        function fechaMenuTg() {
+            $(".c-hamburger").removeClass("is-active");
+        }
+        
+        function abreMenu() {     
+            $(".menu-principal").animate({opacity:"hide" }, 100); 
+            $(".conteudo-menu-principal").animate({opacity:"show" }, 400);
+            $(".menu-principal li").addClass("wow bounceInDown animated");
+            $(".menu-apps").animate({opacity:"hide" }, 400);
+
+            $(".c-azul").css({'fill':'#ffffff'});
+            $(".c-amarelo").css({'fill':'#ffffff'});
+            $(".c-texto").css({'fill':'#ffffff'}); 
+
+            $("main #header-principal").css({'background':'#2B497B'});
+          
+            
+        }
+    
+        function fechaMenu() {        
+            if (window.matchMedia("(min-width:992px)").matches) {
+                $(".menu-principal, .menu-apps").animate({opacity:"show" }, 100);
+            } else {
+                $(".menu-principal, .menu-apps").animate({opacity:"hide" }, 100);
+            }                
+            $(".conteudo-menu-principal").animate({opacity:"hide" }, 400);
+            $(".menu-principal li").removeClass("wow bounceInDown animated");
+            $(".menu-apps").animate({opacity:"show" }, 400);
+
+            $(".c-azul").css({'fill':'#2B497B'});
+            $(".c-amarelo").css({'fill':'#E1940B'});
+            $(".c-texto").css({'fill':'#ffffff'});
+
+            $("main #header-principal").css({'background':'#2B497B'}); 
+            
+            fechaMenuTg();
+
+        }       
+
+        
+    </script>
+    
+</body>
+</html>

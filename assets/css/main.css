@@ -1,0 +1,799 @@
+@charset "UTF-8";
+
+/* =================================================================== 
+ *
+ *  
+ *  ------------------------------------------------------------------
+ *
+ *
+ *
+ * =================================================================== */
+
+/* -----------------------------------------------------
+Media Query Exemplos
+-----------------------------------------------------
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1382px) {}
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 992px) {}
+*/  
+
+main {
+    overflow-x: hidden;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+section {
+    position: relative;
+}
+.cont-flex {
+    display: flex;
+    justify-content: flex-end;
+}
+.cont-flex-center {
+    display: flex;
+    align-items: center;
+}
+.cont-flex-base {
+    display: flex;
+    align-items: flex-end;
+}
+img {
+    max-width: 100%;
+}
+
+@media only screen and (min-width: 320px) {
+    .is-mobile {display:block}
+    .is-desktop {display:none;}
+}
+@media only screen and (min-width: 768px) {
+    .is-mobile {display:none}
+    .is-desktop {display:block;}
+}
+
+
+
+/**********************************************************************
+***********************************************************************
+****
+****        Header, menu e submenu
+****
+****
+***********************************************************************
+**********************************************************************/
+/*header e menu*/
+
+/* # Header */
+main #header-principal {
+    position: absolute;
+    background:#2B497B;
+    width: 100%;
+    height: 90px;
+    z-index: 2;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    opacity: 1!important;
+    z-index: 999;
+}
+
+
+/* ## Logo */
+@media only screen and (min-width: 320px) {
+    main #header-principal .logo-top {
+        float: left;
+        display: block;
+        margin:10px 10px 0 0;
+        width: 100px;
+        -webkit-transition: all .25s ease;
+        transition: all .25s ease;
+    }
+    main #header-principal .logo-top .c-azul {fill:#1c75bc;}
+    main #header-principal .logo-top .c-amarelo {fill:#ffc20e;}
+    main #header-principal .logo-top .c-texto {fill:#231f20;}
+}
+@media only screen and (min-width: 992px) {
+    main #header-principal .logo-top {        
+        width: 100px;
+        -webkit-transition: all .25s ease;
+        transition: all .25s ease;
+    }
+}
+
+
+/* ## Menu principal */
+@media only screen and (min-width: 320px) {
+    main #header-principal .menu-principal {
+        display: none;
+    }
+}
+@media only screen and (min-width: 992px) {
+    main #header-principal .menu-principal {
+        display: block;
+    }
+    main #header-principal .menu-principal {
+        float: left;
+        margin:0 0 0 100px;
+    }
+    main #header-principal .menu-principal ul li a {
+        display: inline-block;
+        font-family: 'Open Sans', sans-serif;
+        color:#ffffff;
+        font-size: 13px;
+        text-decoration: none;
+        font-weight: 700;
+        -webkit-transition: all .25s ease;
+        transition: all .25s ease;
+    }
+    main #header-principal .menu-principal ul li a.active {
+        color:#E1940B;
+    }
+    main #header-principal .menu-principal ul li a:hover {
+        color:#E1940B;
+        text-decoration: none;
+        -webkit-transition: all .25s ease;
+        transition: all .25s ease;
+    }
+    main #header-principal .menu-principal ul {
+        list-style: none;
+        margin:40px 0 0 0;
+        padding:0;    
+    }
+    main #header-principal .menu-principal ul li {
+        display: inline-block; 
+        padding:0 5px 0 5px;   
+    }
+}
+@media only screen and (min-width:1200px) {
+    main #header-principal .menu-principal ul {
+        list-style: none;
+        margin:36px 0 0 0;
+        padding:0;    
+    }
+    main #header-principal .menu-principal {
+        margin:0 0 0 100px;
+    }
+    main #header-principal .menu-principal ul li a {
+        font-size: 13px;        
+    }
+}
+
+
+
+/* ## Menu hamburguer */
+@media only screen and (min-width: 320px) {
+    main #header-principal .mnu-togle {
+        float: right;
+        margin:14px 0 0 3px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    main #header-principal .mnu-togle {        
+        margin:30px 0 0 20px;
+        display:none
+    }
+}
+
+
+/* ## Itens submenu */
+.conteudo-menu-principal {
+    position: relative;
+    display: none;
+    background-color:#2B497B;   
+    top:-119px;
+    padding: 119px 0 0 0;
+    z-index: -1;
+    height: 104.5vh;    
+}
+.menu-principal-vertical {
+    text-align: center;
+}
+.menu-principal-vertical ul {
+    list-style: none;
+    text-align: right;
+    margin: 30px 0 0 0;
+    padding: 0;
+}
+.menu-principal-vertical ul li {
+    margin: 0 0 7px 0;
+    padding: 0;
+}
+.menu-principal-vertical ul li a {
+    font-family: 'Open Sans', sans-serif;
+    color:#ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: 700;
+}
+.menu-principal-vertical ul li a.active {
+    color:#E1940B;
+}
+.menu-principal-vertical ul li a:hover {
+    color:#E1940B;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+}
+.apps {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* # Menu Fix */
+.classFixMenuHeader {
+    position: fixed!important;
+    height: 70px!important;
+    width: 100%;
+    background-color: #2B497B;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+}
+.classFixMenuHeader .logo-top {
+    margin:10px 10px 0 0!important;
+    width: 80px!important;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+}
+.classFixMenuHeader .menu-principal ul {    
+    margin:25px 0 0 0!important;    
+}
+@media only screen and (min-width: 320px) {
+    .classFixMenuHeader .menu-apps ul {    
+        margin:20px 0 0 0;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .classFixMenuHeader .menu-apps ul {    
+        margin:20px 0 0 0!important;
+    }
+    .classFixMenuHeader .mnu-togle {        
+        margin:20px 0 0 20px!important;
+    }
+}
+/**********************************************************************
+***********************************************************************
+****
+****        Header, menu e submenu
+****
+****
+***********************************************************************
+**********************************************************************/
+
+
+
+
+
+/**********************************************************************
+***********************************************************************
+****
+****        Banner
+****
+****
+***********************************************************************
+**********************************************************************/
+.banner {
+    margin-top: 70px;
+}
+.banner .carousel-item {
+    position: relative;
+    width: 100%;
+}
+/*.banner .carousel-item .cont-banner {
+    position: absolute;
+    top:20.63983488132095vh;
+    width: 100%;
+}*/
+.banner .carousel-item .cont-banner {
+    background: url(../images/banner.png) no-repeat top center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    height: 60vh;
+    align-items: center;
+    justify-items: center;
+}
+
+
+@media only screen and (min-width: 320px) {
+    .banner .carousel-item .cont-banner h1 {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .banner .carousel-item .cont-banner h1 {        
+        font-size: 41px;
+    }
+}
+
+/**********************************************************************
+***********************************************************************
+****
+****        Banner
+****
+****
+***********************************************************************
+**********************************************************************/
+
+
+
+
+
+
+/**********************************************************************
+***********************************************************************
+****
+****        Tipografia
+****
+****
+***********************************************************************
+**********************************************************************/
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+li {
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    position: relative;
+    font-weight: bold;
+    font-size: 41px;
+    color: #333333;
+}
+h2::before {
+    content:"";
+    width: 55px;
+    height: 7px;
+    background: #E1940B;
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+p.tit {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #333333;
+}
+p {
+    font-size: 16px;
+    color: #333333;
+}
+
+ul.servicos {
+    margin: 30px 0;
+    padding: 0 0 0 20px;
+}
+ul.servicos li {
+    list-style-image: url(../images/check.svg);
+    margin-bottom: 20px;
+}
+
+/**********************************************************************
+***********************************************************************
+****
+****        Tipografia
+****
+****
+***********************************************************************
+**********************************************************************/
+
+
+
+
+
+
+
+/**********************************************************************
+***********************************************************************
+****
+****        Sessões
+****
+****
+***********************************************************************
+**********************************************************************/
+.sec-cinza {background: #F8F8F8;}
+.sec-branca {background: #ffffff;}
+footer {
+    background: #2B497B;
+    padding: 7.227038183694532vh 0;
+}
+footer img {
+    margin-bottom: 20px;
+}
+footer p {
+    color: #ffffff;
+    font-weight: normal;
+}
+footer p strong {
+    font-size: 18px;
+}
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.sec-duas-colunas {
+    padding: 20.227038183694532vh 0;
+} 
+/**********************************************************************
+***********************************************************************
+****
+****        Sessões //
+****
+****
+***********************************************************************
+**********************************************************************/
+
+
+
+
+
+
+/**********************************************************************
+***********************************************************************
+****
+****        Botoneira
+****
+****
+***********************************************************************
+**********************************************************************/
+.btn {
+    width: 250px;
+    text-align: center;
+    padding: 17px 10px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 30px; 
+    font-family: 'Open Sans', sans-serif;  
+    text-decoration: none;
+    outline: none;
+}
+.btn-banner {
+    background: #2B497B;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all .25s ease;
+    display: flex;
+    gap: 20px;
+    align-content: center;
+    justify-content: center;
+}
+.btn-banner .seta {
+    fill:#e1940b;
+    transition: all .25s ease;
+}
+.btn-banner:hover {
+    background:#e1940b;
+    color: #2B497B;
+    transition: all .25s ease;
+    outline: none;
+}
+.btn-banner:hover .seta {
+    fill:#2B497B;
+    transition: all .25s ease;
+}
+
+/**********************************************************************
+***********************************************************************
+****
+****        Botoneira //
+****
+****
+***********************************************************************
+**********************************************************************/
+
+
+
+
+/**********************************************************************
+***********************************************************************
+****
+****        Cliente
+****
+****
+***********************************************************************
+**********************************************************************/
+.clientes {
+    margin-top: 30px;
+}
+.clientes img {
+    margin: 15px 0;
+}
+/**********************************************************************
+***********************************************************************
+****
+****        Cliente //
+****
+****
+***********************************************************************
+**********************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************
+***********************************************************************
+****
+****        Formulário
+****
+****
+***********************************************************************
+**********************************************************************/
+
+.s-fale-conosco button,
+.s-fale-conosco input[type=button],
+.s-fale-conosco input[type=reset],
+.s-fale-conosco input[type=submit] {
+    text-shadow: none;
+    width: 250px;
+    padding: 10px 20px;
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    color: #ffffff;
+    border-radius: 15px;
+    -webkit-transition: background-color .15s ease-out;
+    transition: background-color .15s ease-out;
+    background-color: #2B497B;
+}
+.s-fale-conosco button:hover,
+.s-fale-conosco input[type=button]:hover,
+.s-fale-conosco input[type=reset]:hover,
+.s-fale-conosco input[type=submit]:hover  {    
+    background-color: #E1940B;
+    color:#333;
+}
+
+.s-fale-conosco #contato-form-fale-conosco input[type=text] {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px 20px 15px 32px;
+    background-color: #EDEDED;
+    color: #333333;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px
+}
+
+#contato-form-fale-conosco input[type=text]:focus,
+#contato-form-fale-conosco input[type=text]:hover {
+    box-shadow: none
+}
+
+#contato-form-fale-conosco input[type=text]::-webkit-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=text]:-moz-placeholder {
+    color: #333333;
+    opacity: 1
+}
+
+#contato-form-fale-conosco input[type=text]::-moz-placeholder {
+    color: #333333;
+    opacity: 1
+}
+
+#contato-form-fale-conosco input[type=text]:-ms-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=text]::-ms-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=text]::placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=text].placeholder {
+    color: #333333!important
+}
+
+#contato-form-fale-conosco input[type=email] {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px 20px 15px 32px;
+    background-color: #EDEDED;
+    color: #333333;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px
+}
+
+#contato-form-fale-conosco input[type=email]:focus,
+#contato-form-fale-conosco input[type=email]:hover {
+    box-shadow: none
+}
+
+#contato-form-fale-conosco input[type=email]::-webkit-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=email]:-moz-placeholder {
+    color: #333333;
+    opacity: 1
+}
+
+#contato-form-fale-conosco input[type=email]::-moz-placeholder {
+    color: #333333;
+    opacity: 1
+}
+
+#contato-form-fale-conosco input[type=email]:-ms-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=email]::-ms-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=email]::placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=email].placeholder {
+    color: #333333!important
+}
+
+#contato-form-fale-conosco input[type=tel] {    
+    font-size: 16px;
+    padding: 15px 20px 15px 32px;
+    background-color: #EDEDED;
+    color: #333333;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px
+}
+
+#contato-form-fale-conosco input[type=tel]:focus,
+#contato-form-fale-conosco input[type=tel]:hover {
+    box-shadow: none
+}
+
+#contato-form-fale-conosco input[type=tel]::-webkit-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=tel]:-moz-placeholder {
+    color: #333333;
+    opacity: 1
+}
+
+#contato-form-fale-conosco input[type=tel]::-moz-placeholder {
+    color: #333333;
+    opacity: 1
+}
+
+#contato-form-fale-conosco input[type=tel]:-ms-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=tel]::-ms-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=tel]::placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco input[type=tel].placeholder {
+    color: #333333!important
+}
+
+#contato-form-fale-conosco textarea {
+    width: 100%;
+    height: 180px;
+    font-size: 16px;
+    padding: 15px 20px 15px 32px;
+    background-color: #EDEDED;
+    color: #333333;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px
+}
+
+#contato-form-fale-conosco textarea:focus,
+#contato-form-fale-conosco textarea:hover {
+    box-shadow: none
+}
+
+#contato-form-fale-conosco textarea::-webkit-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco textarea:-moz-placeholder {
+    color: #333333;
+    opacity: 1
+}
+
+#contato-form-fale-conosco textarea::-moz-placeholder {
+    color: #333333;
+    opacity: 1
+}
+
+#contato-form-fale-conosco textarea:-ms-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco textarea::-ms-input-placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco textarea::placeholder {
+    color: #333333
+}
+
+#contato-form-fale-conosco textarea.placeholder {
+    color: #333333!important
+}
+
+
+
+#contato-form-fale-conosco .linha {
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+#contato-form-fale-conosco .linha label {
+    margin: -5px 0 0 0;
+    padding: 0;
+}
+
+/**********************************************************************
+***********************************************************************
+****
+****        Formulário //
+****
+****
+***********************************************************************
+**********************************************************************/
+
+
+
+.loading {
+    display: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color:#083c82;
+    font-weight: bold;
+}
+.confirma {
+    display: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2B497B;
+}
